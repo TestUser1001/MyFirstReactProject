@@ -1,0 +1,21 @@
+@use "../variables.scss" as *;
+.menu-btn {
+  background: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+  /*  transform: rotate(0); */
+  transition: all 0.5s ease-in-out;
+}
+
+.transform {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* .pos2 {
+  transform: rotate(0);
+  transition: transform 0.5s ease-in-out;
+} */

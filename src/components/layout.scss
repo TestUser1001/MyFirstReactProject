@@ -1,0 +1,21 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 91.875rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media screen AND (min-width: 576px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

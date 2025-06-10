@@ -1,0 +1,9 @@
+@use "./variables.scss" as *;
+
+@mixin bg-img($img, $pos: center center, $att: scroll) {
+  background-image: url(#{$imgFolder}#{$img});
+  background-position: $pos;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: $att;
+}

@@ -1,0 +1,46 @@
+/* COLORS */
+
+$whiteColor: #ffffff;
+$blackColor: #000000;
+/* $hero-bg-image-light: "HeroBackground.svg";
+$hero-bg-image-dark: "HeroBackgroundDarkMode.svg";
+ */
+/* light Theme */
+$mainColorLight: #404040;
+$secondaryColorLight: #565454;
+$subheadingColorLight: #5343d1;
+$iconsColorLight: #6174c1;
+$outline: #bfbfbf;
+$mobile-menu-bg-light: rgba($whiteColor, 0.65);
+
+/* dark Theme */
+$backgroundColorDark: #11002f;
+$mainColorDark: #ecf1ff;
+$subheadingColorDark: #ffddfa;
+$iconsColorDark: #cd98e7;
+$mobile-menu-bg-dark: rgba($backgroundColorDark, 0.65);
+
+//Other
+$imgFolder: "../../assets/";
+:root {
+  --background-color: #{$whiteColor};
+  --text-primary-color: #{$mainColorLight};
+  --navbar-hero-bg-img: url("../../assets/HeroBackground.svg");
+  --modeSwitcherBg: #{$whiteColor};
+  --modeSwitcherBorder: 1px solid #{$outline};
+  --outlineColor: #{$outline};
+  --iconsColor: #{$iconsColorLight};
+  --mobile-menu-background: #{$mobile-menu-bg-light};
+}
+
+[data-theme="dark"] {
+  --background-color: #{$backgroundColorDark};
+  --text-primary-color: #{$mainColorDark};
+  --navbar-hero-bg-img: url("../../assets/HeroBackgroundDarkMode.svg");
+  --modeSwitcherBg: #{$iconsColorDark};
+  --modeSwitcherBorder: none;
+  --iconsColor: #{$iconsColorDark};
+  --mobile-menu-background: #{$mobile-menu-bg-dark};
+}
+
+/* [data-dark]{} */
