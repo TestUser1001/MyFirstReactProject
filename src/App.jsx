@@ -1,14 +1,17 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
+import i18n from "./utils/i18n";
 import NavbarHero from "./components/NavbarHero/NavbarHero";
 import About from "./components/About/About";
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const themeContext = createContext();
 export const useAppContext = () => useContext(themeContext);
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
+  const { t } = useTranslation();
 
   const toggleTheme = () => {
     setIsDark((prev) => {
@@ -28,6 +31,7 @@ const App = () => {
       <themeContext.Provider value={{ isDark, toggleTheme }}>
         <div className="App" data-theme={isDark ? "dark" : "light"}>
           <NavbarHero />
+          <p>{t("welcomeTest")}</p>
         </div>
       </themeContext.Provider>
     </BrowserRouter>

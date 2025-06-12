@@ -10,11 +10,14 @@ import { useAppContext } from "../../App";
 import logoLight from "../../assets/logo_light.svg";
 import logoDark from "../../assets/logo_dark.svg";
 import MenuMobile from "../Interface/MenuMobile";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { isDark } = useAppContext();
 
   const [menuClosed, setMenuClosed] = useState(true);
+
+  const { t } = useTranslation();
 
   return (
     <nav className="container navbar">
@@ -30,34 +33,38 @@ const Navbar = () => {
         <ul className={`navbar__links ${!menuClosed ? "visible" : ""} `}>
           <li className="navbar__item">
             <NavLink to="#" className="navbar__link">
-              Home
+              {t("home")}
             </NavLink>
           </li>
           <li className="navbar__item">
             <NavLink href="#" className="navbar__link">
-              About me
+              {t("about")}
             </NavLink>
           </li>
           <li className="navbar__item">
             <NavLink to="#" className="navbar__link">
-              projects
+              {t("projects")}
             </NavLink>
           </li>
           <li className="navbar__item">
             <NavLink to="#" className="navbar__link">
-              skills
+              {t("skills")}
             </NavLink>
           </li>
           <li className="navbar__item">
             <NavLink to="#" className="navbar__link">
-              contact
+              {t("contact")}
             </NavLink>
           </li>
           <li className="navbar__item">
             <NavLink to="#" className="navbar__link">
-              blog
+              {t("blog")}
             </NavLink>
           </li>
+
+          <div className="navbar__item--switcher">
+            <LangSwitcher />
+          </div>
         </ul>
 
         <div className="navbar__switchers">

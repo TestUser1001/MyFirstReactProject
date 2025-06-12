@@ -8,15 +8,12 @@ import { useAppContext } from "../../App";
 
 const MenuMobile = ({ menuClosed, setMenuClosed }) => {
   const { isDark } = useAppContext();
-  /* const {} = useState(true); */
 
-  console.log(setMenuClosed);
   return (
     <button
       className={`menu-btn ${menuClosed ? "transform" : ""}`}
       onClick={() => {
         setMenuClosed(!menuClosed);
-        console.log(menuClosed);
       }}
     >
       <img
