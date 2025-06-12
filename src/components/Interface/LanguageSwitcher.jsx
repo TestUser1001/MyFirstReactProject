@@ -22,7 +22,7 @@ const LanguageSwitcher = () => {
         Select a language
       </label>
 
-      <div className="navbar__lang">
+      <div className="lang">
         <select
           name="language"
           id="language"

@@ -1,1 +1,34 @@
+.lang {
+  margin-top: 1.5rem;
+  padding-left: 0.5rem;
 
+  select {
+    background-color: var(--background-color);
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--text-primary-color);
+    border-radius: 0.5rem;
+
+    appearance: none;
+    background-position: right center; // Move the icon closer
+    background-repeat: no-repeat;
+    border: none;
+    /*  background-color: transparent; */
+    background-size: 1rem;
+    background-image: url("../../assets/ChevronDown.svg");
+    svg {
+      color: #fff;
+    }
+    &:active,
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    option {
+      background-color: var(--background-color);
+      border: 1px solid var(--outline);
+    }
+  }
+}
