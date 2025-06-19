@@ -68,7 +68,9 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar__switchers">
-          {/*  <LangSwitcher /> */}
+          <div className="navbar__lang">
+            <LangSwitcher />
+          </div>
           <ThemeToggle />
         </div>
         <MenuMobile menuClosed={menuClosed} setMenuClosed={setMenuClosed} />

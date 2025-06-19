@@ -1,8 +1,16 @@
+@use "../mixins.scss" as *;
+
 .lang {
   margin-top: 1.5rem;
   padding-left: 0.5rem;
 
-  select {
+  @include media-breakpoint(768px) {
+    margin: 0;
+    padding-left: 0;
+    font-size: 0.875rem;
+  }
+
+  /*  select {
     background-color: var(--background-color);
     padding: 0.5rem 1rem;
     font-family: inherit;
@@ -14,7 +22,7 @@
     background-position: right center; // Move the icon closer
     background-repeat: no-repeat;
     border: none;
-    /*  background-color: transparent; */
+    /*  background-color: transparent; 
     background-size: 1rem;
     background-image: url("../../assets/ChevronDown.svg");
     svg {
@@ -30,5 +38,5 @@
       background-color: var(--background-color);
       border: 1px solid var(--outline);
     }
-  }
+  }*/
 }

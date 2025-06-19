@@ -2,4 +2,13 @@
 
 .App {
   background-color: var(--background-color);
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 3rem;
+    font-weight: 700;
+  }
 }

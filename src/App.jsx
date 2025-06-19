@@ -11,6 +11,7 @@ export const useAppContext = () => useContext(themeContext);
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
+  const [i18nReady, setI18nReady] = useState(false);
   const { t } = useTranslation();
 
   const toggleTheme = () => {
@@ -23,15 +24,23 @@ const App = () => {
 
   useEffect(() => {
     const stored = localStorage.getItem("isDark");
+
     if (stored) setIsDark(stored === "true");
-  }, []);
+
+    const storedLang = localStorage.getItem("language") || i18n.language;
+    i18n.changeLanguage(storedLang).then(() => {
+      setI18nReady(true); // Mark language as initialized
+    });
+    /*   console.log("useEffect"); */
+  }, [i18n]);
+
+  if (!i18nReady) return <div className="App__loading">Loading...</div>;
 
   return (
     <BrowserRouter>
       <themeContext.Provider value={{ isDark, toggleTheme }}>
         <div className="App" data-theme={isDark ? "dark" : "light"}>
           <NavbarHero />
-          <p>{t("welcomeTest")}</p>
         </div>
       </themeContext.Provider>
     </BrowserRouter>

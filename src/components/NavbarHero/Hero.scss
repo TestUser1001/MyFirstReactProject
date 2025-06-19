@@ -1,0 +1,114 @@
+@use "../variables.scss" as *;
+@use "../typography.scss" as *;
+@use "../mixins.scss" as *;
+
+.hero {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4.5rem;
+
+  &__intro {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    @include media-breakpoint(576px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__all-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    @include media-breakpoint(768) {
+    }
+  }
+
+  &__cooperate {
+    /*  margin-top: 1.5rem; */
+    color: var(--secondary-text-color);
+    align-self: start;
+  }
+
+  &__introduce {
+    /*  margin-top: 1.5rem; */
+    color: var(--text-primary-color);
+  }
+
+  &__avatar {
+    /*    height: 17rem;
+    width: 17rem;*/
+
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__avatar-responsive {
+    /*  margin: 2rem auto; */
+    @include media-breakpoint(428px) {
+      /*   */
+      width: 80%;
+      align-self: center;
+    }
+    @include media-breakpoint(576px) {
+      /*   */
+
+      width: 65%;
+    }
+  }
+
+  &__left {
+    display: flex;
+    /*  display: block; */
+    flex-direction: column;
+    gap: 2rem;
+    @include media-breakpoint(576px) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__collab {
+    /*  padding: 2.5rem 0; */
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint(576px) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__cta {
+    color: var(--text-primary-color);
+    text-align: center;
+  }
+
+  &__buttons {
+    /*  margin-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    gap: 1.3rem;
+
+    @include media-breakpoint(428px) {
+      flex-direction: row;
+      width: 90%;
+      gap: 1.5rem;
+    }
+
+    @include media-breakpoint(576px) {
+      flex-direction: row;
+      /*     width: 90%; */
+      gap: 2.5rem;
+    }
+  }
+}

@@ -1,49 +1,76 @@
-import React, { use, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LanguageSwitcher.scss";
 import i18n from "../../utils/i18n";
+import Select from "react-select";
 
 const LanguageSwitcher = () => {
   const languages = [
-    { id: "en", label: "EN" },
-    { id: "ua", label: "UA" },
+    { value: "en", label: "EN" },
+    { value: "ua", label: "UA" },
   ];
-  const [language, setLanguage] = useState(i18n.language);
-  console.log(languages);
+  const [language, setLanguage] = useState(null);
+  /* console.log("useState"); */
+
+  useEffect(() => {
+    const searchLng = localStorage.getItem("language") || i18n.language;
+    console.log(searchLng);
+    setLanguage(languages.find((lang) => lang.value === searchLng));
+    /*  i18n.changeLanguage(searchLng); */
+    /* console.log("useEffect"); */
+  }, []);
+
+  const newStyles = {
+    control: (styles) => ({
+      ...styles,
+      backgroundColor: "var(--background-color)",
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      /*  console.log(isActive); */
+      return {
+        ...styles,
+        color: "var(--text-primary-color)",
+
+        ":active": {
+          backgroundColor: "var(--active-color)",
+        },
+        backgroundColor: isSelected
+          ? "var(--outlineColor)"
+          : isFocused
+          ? "var(--outline-accent)"
+          : "var(--secondary-container)",
+      };
+    },
+
+    placeholder: (styles) => ({
+      ...styles,
+      color: "var(--text-primary-color)",
+    }),
+    singleValue: (styles) => ({
+      ...styles,
+      color: "var(--text-primary-color)",
+    }),
+    menu: (styles) => ({
+      ...styles,
+      backgroundColor: "var(--background-color)",
+      border: "var(--lang-switcher-border)",
+    }),
+  };
+
   const handleOnChange = (e) => {
-    /* setLanguage(e.target.value); */
-    /* console.log(typeof e.target.value.toLowerCase()); */
-    const newLanguage = e.target.value;
+    const newLanguage = e.value;
     i18n.changeLanguage(newLanguage);
-    setLanguage(newLanguage);
+    setLanguage(languages.find((lang) => lang.value === newLanguage));
+    localStorage.setItem("language", newLanguage);
   };
   return (
-    <div>
-      <label htmlFor="language" className="visually-hidden">
-        Select a language
-      </label>
-
-      <div className="lang">
-        <select
-          name="language"
-          id="language"
-          onChange={handleOnChange}
-          value={language}
-        >
-          {/* <option value="EN">EN</option>
-          <option value="UA">UA</option> */}
-
-          {languages.map((lang) => {
-            const { id, label } = lang;
-            return (
-              <option key={id} value={id}>
-                {" "}
-                {label}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-    </div>
+    <Select
+      options={languages}
+      onChange={handleOnChange}
+      value={language}
+      className="lang"
+      placeholder="Select a language"
+      styles={newStyles}
+    />
   );
 };
 export default LanguageSwitcher;

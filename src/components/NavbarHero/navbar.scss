@@ -1,8 +1,9 @@
 @use "../../components/variables.scss" as *;
 
+@use "../mixins.scss" as *;
 .navbar {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 3rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -11,11 +12,20 @@
 
   &__right {
     display: flex;
-    gap: 1.875rem;
+    gap: 1rem;
+    align-items: center;
+    @include media-breakpoint(768px) {
+      gap: 1.5rem;
+    }
+
+    @include media-breakpoint(992px) {
+      gap: 2rem;
+    }
   }
 
   &__links {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -30,9 +40,35 @@
     pointer-events: none;
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
+
+    @include media-breakpoint(768px) {
+      opacity: 1;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      background: none;
+      padding: 0;
+      transform: translateY(0);
+      pointer-events: auto;
+      gap: 0.5rem;
+    }
+
+    @include media-breakpoint(1400px) {
+      gap: 1rem;
+    }
   }
 
   &__item {
+    &--switcher {
+      @include media-breakpoint(576px) {
+        width: 50%;
+      }
+
+      @include media-breakpoint(768px) {
+        display: none;
+      }
+    }
   }
 
   &__link {
@@ -42,9 +78,17 @@
     line-height: 1.5rem;
     transition: all 0.5s ease-in-out;
     padding: 0.5rem;
+    white-space: nowrap;
 
     &:hover {
       color: var(--iconsColor);
+    }
+
+    @include media-breakpoint(768px) {
+      font-size: 0.875rem;
+    }
+    @include media-breakpoint(1400px) {
+      font-size: 1.25rem;
     }
   }
 
@@ -54,18 +98,41 @@
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+    @include media-breakpoint(768px) {
+      display: none;
+      /*  opacity: 0; */
+    }
   } //
 
   &__switchers {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    width: 530%;
+    gap: 1rem;
+
+    @include media-breakpoint(768px) {
+      gap: 2rem;
+    }
+  }
+
+  &__lang {
+    display: none;
+    @include media-breakpoint(768px) {
+      display: block;
+    }
   }
 
   &__logo {
     cursor: pointer;
     width: 3rem;
     height: 3rem;
+
+    /*  @include media-breakpoint(576px) {
+      width: 4rem;
+      height: 4rem;
+    } */
   }
 
   /*  &__menu {

@@ -1,18 +1,29 @@
 @use "../variables.scss" as *;
+@use "../mixins.scss" as *;
 .menu-btn {
   background: none;
   box-shadow: none;
   border: none;
   outline: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 4;
   /*  transform: rotate(0); */
   transition: all 0.5s ease-in-out;
+
+  @include media-breakpoint(768px) {
+    display: none;
+    transition: none;
+  }
 }
 
 .transform {
   transform: rotate(360deg);
   transition: transform 0.5s ease-in-out;
+
+  @include media-breakpoint(768px) {
+    display: none;
+    transition: none;
+  }
 }
 
 /* .pos2 {
