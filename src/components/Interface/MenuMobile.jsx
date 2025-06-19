@@ -11,9 +11,7 @@ const MenuMobile = ({ menuClosed, setMenuClosed }) => {
 
   const setIsMobile = () => {
     window.addEventListener("resize", () => {
-      /*  this.*/ if (window.innerWidth > 768 || !menuClosed)
-        setMenuClosed(true);
-      /*  console.log(menuClosed); */
+      if (window.innerWidth > 768 || !menuClosed) setMenuClosed(true);
     });
   };
 
@@ -22,8 +20,6 @@ const MenuMobile = ({ menuClosed, setMenuClosed }) => {
   }, []);
 
   return (
-    /* window.onresize={setMenuClosed()} */
-
     <button
       className={`menu-btn ${menuClosed ? "transform" : ""}`}
       onClick={() => {

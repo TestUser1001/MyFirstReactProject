@@ -9,14 +9,11 @@ const LanguageSwitcher = () => {
     { value: "ua", label: "UA" },
   ];
   const [language, setLanguage] = useState(null);
-  /* console.log("useState"); */
 
   useEffect(() => {
     const searchLng = localStorage.getItem("language") || i18n.language;
     console.log(searchLng);
     setLanguage(languages.find((lang) => lang.value === searchLng));
-    /*  i18n.changeLanguage(searchLng); */
-    /* console.log("useEffect"); */
   }, []);
 
   const newStyles = {
@@ -25,7 +22,6 @@ const LanguageSwitcher = () => {
       backgroundColor: "var(--background-color)",
     }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-      /*  console.log(isActive); */
       return {
         ...styles,
         color: "var(--text-primary-color)",

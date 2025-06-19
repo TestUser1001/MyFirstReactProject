@@ -6,7 +6,6 @@ import Hero from "./Hero";
 import { useAppContext } from "../../App";
 import lightBg from "../../assets/HeroBackground.svg";
 import darkBg from "../../assets/HeroBackgroundDarkMode.svg";
-/* import { useTranslation } from "react-i18next"; */
 
 const NavbarHero = () => {
   const { isDark } = useAppContext();

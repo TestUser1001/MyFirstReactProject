@@ -2,9 +2,7 @@
 
 $whiteColor: #ffffff;
 $blackColor: #000000;
-/* $hero-bg-image-light: "HeroBackground.svg";
-$hero-bg-image-dark: "HeroBackgroundDarkMode.svg";
- */
+
 /* light Theme */
 $mainColorLight: #404040;
 $secondaryColorLight: #565454;
@@ -88,5 +86,3 @@ $imgFolder: "../../assets/";
   --display-before-gradient: #{$display-gradient-dark};
   --btn-background: #{$btn-background-dark};
 }
-
-/* [data-dark]{} */

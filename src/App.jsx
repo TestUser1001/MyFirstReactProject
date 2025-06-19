@@ -31,7 +31,6 @@ const App = () => {
     i18n.changeLanguage(storedLang).then(() => {
       setI18nReady(true);
     });
-    /*   console.log("useEffect"); */
   }, [i18n]);
 
   if (!i18nReady) return <div className="App__loading">Loading...</div>;

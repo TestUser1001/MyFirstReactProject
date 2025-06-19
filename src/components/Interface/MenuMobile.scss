@@ -7,7 +7,6 @@
   outline: none;
   cursor: pointer;
   z-index: 4;
-  /*  transform: rotate(0); */
   transition: all 0.5s ease-in-out;
 
   @include media-breakpoint(768px) {
@@ -25,8 +24,3 @@
     transition: none;
   }
 }
-
-/* .pos2 {
-  transform: rotate(0);
-  transition: transform 0.5s ease-in-out;
-} */
