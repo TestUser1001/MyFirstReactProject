@@ -29,7 +29,7 @@ const App = () => {
 
     const storedLang = localStorage.getItem("language") || i18n.language;
     i18n.changeLanguage(storedLang).then(() => {
-      setI18nReady(true); // Mark language as initialized
+      setI18nReady(true);
     });
     /*   console.log("useEffect"); */
   }, [i18n]);

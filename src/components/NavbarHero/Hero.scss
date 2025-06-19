@@ -20,6 +20,13 @@
 
     @include media-breakpoint(576px) {
       font-size: 1rem;
+      line-height: 2rem;
+    }
+
+    @include media-breakpoint(1200px) {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      gap: 4rem;
     }
   }
 
@@ -27,7 +34,12 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    @include media-breakpoint(768) {
+    @include media-breakpoint(768px) {
+      flex-direction: row;
+      gap: 0.3rem;
+    }
+    @include media-breakpoint(768px) {
+      gap: 0.6rem;
     }
   }
 
@@ -62,6 +74,18 @@
 
       width: 65%;
     }
+
+    @include media-breakpoint(768px) {
+      /*   */
+
+      width: 100%;
+      align-self: flex-end;
+    }
+    @include media-breakpoint(1200px) {
+      /*   */
+
+      /*  width: 70%; */
+    }
   }
 
   &__left {
@@ -71,6 +95,10 @@
     gap: 2rem;
     @include media-breakpoint(576px) {
       gap: 2.5rem;
+    }
+
+    @include media-breakpoint(1200px) {
+      gap: 3rem;
     }
   }
 
@@ -83,6 +111,14 @@
 
     @include media-breakpoint(576px) {
       gap: 2.5rem;
+    }
+
+    @include media-breakpoint(768px) {
+      gap: 3.375rem;
+    }
+
+    @include media-breakpoint(1200px) {
+      gap: 3.8rem;
     }
   }
 
@@ -107,8 +143,16 @@
 
     @include media-breakpoint(576px) {
       flex-direction: row;
-      /*     width: 90%; */
       gap: 2.5rem;
+    }
+
+    @include media-breakpoint(768px) {
+      /*    flex-direction: row; */
+      width: 50%;
+    }
+
+    @include media-breakpoint(1200px) {
+      gap: 4rem;
     }
   }
 }
