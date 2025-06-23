@@ -5,6 +5,7 @@ import photo from "../../assets/Photo.svg";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../App";
 import "../../components/help_classes.scss";
+import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
 
 const Hero = () => {
   const { isDark } = useAppContext();
@@ -14,7 +15,8 @@ const Hero = () => {
       <div className="hero__intro">
         <div className="hero__all-intro">
           <div className="hero__left">
-            <h1 className="display">{t("greeting")}</h1>
+            <SimpleTypeWriter words={[t("greeting")]} />
+            {/*   <h1 className="display">{t("greeting")}</h1> */}
             <p className="hero__introduce">{t("introduce")}</p>
             <p className="hero__cooperate">{t("collaborate")}</p>
           </div>

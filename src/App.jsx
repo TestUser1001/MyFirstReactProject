@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Preloader from "./components/Interface/Preloader";
 
 export const themeContext = createContext();
 export const useAppContext = () => useContext(themeContext);
@@ -33,7 +34,12 @@ const App = () => {
     });
   }, [i18n]);
 
-  if (!i18nReady) return <div className="App__loading">Loading...</div>;
+  if (!i18nReady)
+    return (
+      <div className="App__loading">
+        <Preloader />
+      </div>
+    );
 
   return (
     <BrowserRouter>

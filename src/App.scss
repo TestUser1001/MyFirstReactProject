@@ -5,10 +5,11 @@
 
   &__loading {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
+    width: 10%;
+    height: 10%;
+    margin: 5rem auto;
+    /* color: red;
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 700; */
   }
 }
