@@ -10,7 +10,7 @@ $active-color-light: #668da954;
 $subheadingColorLight: #5343d1;
 $iconsColorLight: #6174c1;
 $outline: #bfbfbf;
-$secondary-container-light: #f3f1f1;
+$secondary-container-light: #fcfcfc;
 $outline-accent-light: #fafafa;
 $mobile-menu-bg-light: rgba($whiteColor, 0.95);
 $switcher-border-light: none;
@@ -47,12 +47,13 @@ $display-before-gradient-dark: linear-gradient(
 );
 
 $btn-background-dark: linear-gradient(111.059deg, #eeedef 0%, #c480fe 100%);
+
 //Other
 $imgFolder: "../../assets/";
 :root {
   --background-color: #{$whiteColor};
   --text-primary-color: #{$mainColorLight};
-  --navbar-hero-bg-img: url("../../assets/HeroBackground.svg");
+  /*  --navbar-hero-bg-img: url("../../assets/HeroBackground.svg"); */
   --modeSwitcherBg: #{$whiteColor};
   --modeSwitcherBorder: 1px solid #{$outline};
   --outlineColor: #{$outline};
@@ -66,12 +67,15 @@ $imgFolder: "../../assets/";
   --display-gradient: #{$display-gradient-light};
   --display-before-gradient: #{$display-before-gradient-light};
   --btn-background: #{$btn-background-light};
+  --subheading: #{$subheadingColorLight};
+  --card-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  /*  --card-bg: none; */
 }
 
 [data-theme="dark"] {
   --background-color: #{$backgroundColorDark};
   --text-primary-color: #{$mainColorDark};
-  --navbar-hero-bg-img: url("../../assets/HeroBackgroundDarkMode.svg");
+  /*   --navbar-hero-bg-img: url("../../assets/HeroBackgroundDarkMode.svg"); */
   --modeSwitcherBg: #{$iconsColorDark};
   --modeSwitcherBorder: none;
   --outline-accent: #{$outline-accent-dark};
@@ -85,4 +89,7 @@ $imgFolder: "../../assets/";
   --display-gradient: #{$display-gradient-dark};
   --display-before-gradient: #{$display-gradient-dark};
   --btn-background: #{$btn-background-dark};
+  --subheading: #{$subheadingColorDark};
+  /* --card-bg: #312448; */
+  --card-shadow: none;
 }

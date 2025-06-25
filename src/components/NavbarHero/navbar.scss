@@ -101,6 +101,7 @@
     display: flex;
     opacity: 1;
     pointer-events: auto;
+    height: 100vh;
     transform: translateY(0);
     @include media-breakpoint(768px) {
       display: none;

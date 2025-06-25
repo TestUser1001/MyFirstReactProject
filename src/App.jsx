@@ -46,6 +46,7 @@ const App = () => {
       <themeContext.Provider value={{ isDark, toggleTheme }}>
         <div className="App" data-theme={isDark ? "dark" : "light"}>
           <NavbarHero />
+          <About />
         </div>
       </themeContext.Provider>
     </BrowserRouter>

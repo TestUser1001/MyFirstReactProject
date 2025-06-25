@@ -9,6 +9,7 @@ const LanguageSwitcher = () => {
     { value: "ua", label: "UA" },
   ];
   const [language, setLanguage] = useState(null);
+  /* const [reRender, setReRender] = useState(false); */
 
   useEffect(() => {
     const searchLng = localStorage.getItem("language") || i18n.language;

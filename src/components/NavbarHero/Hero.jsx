@@ -9,13 +9,13 @@ import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
 
 const Hero = () => {
   const { isDark } = useAppContext();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className="hero container">
       <div className="hero__intro">
         <div className="hero__all-intro">
           <div className="hero__left">
-            <SimpleTypeWriter words={[t("greeting")]} />
+            <SimpleTypeWriter key={i18n.language} words={[t("greeting")]} />
             {/*   <h1 className="display">{t("greeting")}</h1> */}
             <p className="hero__introduce">{t("introduce")}</p>
             <p className="hero__cooperate">{t("collaborate")}</p>

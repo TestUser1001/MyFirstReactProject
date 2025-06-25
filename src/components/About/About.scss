@@ -1,0 +1,155 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.about {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  /* margin-top: 3.5rem; */
+
+  @include media-breakpoint(768px) {
+    flex-direction: row;
+
+    justify-content: start;
+    align-items: normal;
+    gap: 3rem;
+    /* height: 100%; */
+  }
+  @include media-breakpoint(1200px) {
+    gap: 4rem;
+    /* height: 100%; */
+  }
+
+  &__card {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    /* max-height: 23.375rem; */
+
+    padding: 0.5rem 2rem 2rem 2rem;
+
+    box-shadow: var(--card-shadow);
+    background-color: var(--secondary-container);
+    border-radius: 0.5rem;
+    width: 100%;
+
+    @include media-breakpoint(576px) {
+      width: 80%;
+    }
+    @include media-breakpoint(768px) {
+      width: 50%;
+    }
+
+    /* @include media-breakpoint(1400px) {
+      height: 23.375rem;
+    } */
+    &--tech {
+      gap: 25%;
+      /*  justify-content: space-between; */
+    }
+  }
+
+  &__list {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: var(--text-primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include media-breakpoint(768px) {
+      gap: 1rem;
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint(768px) {
+      /*  gap: 1rem; */
+      line-height: 2rem;
+    }
+
+    @include media-breakpoint(1400px) {
+      /*  gap: 1rem; */
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
+  }
+  &__list-item {
+    position: relative;
+    padding-left: 2rem;
+    &::before {
+      position: absolute;
+      left: 0;
+      content: "";
+      mask: url("../../assets/check_l.svg") no-repeat center;
+      -webkit-mask: url("../../assets/check_l.svg") no-repeat center;
+      background-color: var(--iconsColor);
+
+      width: 1.5rem;
+      height: 1.5rem;
+      display: block;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__technologies-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1.15rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+  }
+
+  &__technologies-list-item {
+    /*  */
+    background-color: var(--iconsColor);
+    /* flex: 1 0 auto; */
+
+    width: 3rem;
+    height: 3rem;
+
+    @include media-breakpoint(992px) {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &--html {
+      mask: url("../../assets/Html.svg") no-repeat center;
+      -webkit-mask: url("../../assets/Html.svg") no-repeat center;
+    }
+
+    &--css {
+      mask: url("../../assets/CSS3.svg") no-repeat center;
+      -webkit-mask: url("../../assets/CSS3.svg") no-repeat center;
+    }
+
+    &--js {
+      mask: url("../../assets/JS.svg") no-repeat center;
+      -webkit-mask: url("../../assets/JS.svg") no-repeat center;
+    }
+
+    &--react {
+      mask: url("../../assets/reactLight.svg") no-repeat center;
+      -webkit-mask: url("../../assets/reactLight.svg") no-repeat center;
+    }
+  }
+}
