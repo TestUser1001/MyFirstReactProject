@@ -13,7 +13,7 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     const searchLng = localStorage.getItem("language") || i18n.language;
-    console.log(searchLng);
+    /*  console.log(searchLng); */
     setLanguage(languages.find((lang) => lang.value === searchLng));
   }, []);
 

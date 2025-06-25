@@ -6,6 +6,7 @@ import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Preloader from "./components/Interface/Preloader";
+import Projects from "./components/Projects/Projects";
 
 export const themeContext = createContext();
 export const useAppContext = () => useContext(themeContext);
@@ -47,6 +48,7 @@ const App = () => {
         <div className="App" data-theme={isDark ? "dark" : "light"}>
           <NavbarHero />
           <About />
+          {/*  <Projects /> */}
         </div>
       </themeContext.Provider>
     </BrowserRouter>

@@ -3,15 +3,6 @@ import "./About.scss";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../App";
 
-import html from "../../assets/Html.svg";
-import htmlDark from "../../assets/Html_Dark.svg";
-import css from "../../assets/CSS3.svg";
-import cssDark from "../../assets/CSS3Dark.svg";
-import JS from "../../assets/JS.svg";
-import JSDark from "../../assets/JSDark.svg";
-import reactLight from "../../assets/reactLight.svg";
-import reactDark from "../../assets/reactDark.svg";
-
 const About = () => {
   const { t } = useTranslation();
 
