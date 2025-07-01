@@ -2,8 +2,14 @@
 @use "../mixins.scss" as *;
 
 .about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
+  @include media-breakpoint(1400px) {
+    gap: 3rem;
+  }
 }
 
 .about-content {

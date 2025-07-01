@@ -10,12 +10,14 @@
   "introduce": "I am currently seeking a position as a front-end developer. I have recently completed several comprehensive online courses in front-end development and undertaken substantial practical work to further enhance my skills and professional growth in this field.",
   "collaborate": "So, I would be glad to collaborate with your team.",
   "cta-collaboration": "If you are interested in collaborating with me, please feel free to contact me or review my resume.",
-  "contact": "Contact",
+  "getInTouch": "Contact",
   "resume": "Resume",
   "personal": "Personal data",
   "bio": "I was born on January 21, 1993, in Mykolaiv, Ukraine. ",
   "education": "I graduated from Petro Mohyla Black Sea University in 2015 with a degree as a specialist in Computer Engineering",
   "jobs": "From 2016 to 2023, I worked as a Software Engineer at Time IT.",
-  "about": "About me",
-  "technologies": "Technologies I use"
+  "aboutHeading": "About me",
+  "technologies": "Technologies I use",
+  "projectsHeading": "My Projects",
+  "showMore": "Show more"
 }

@@ -32,32 +32,32 @@ const Navbar = () => {
       <div className="navbar__right">
         <ul className={`navbar__links ${!menuClosed ? "visible" : ""} `}>
           <li className="navbar__item">
-            <NavLink to="#" className="navbar__link">
+            <NavLink to="/" className="navbar__link">
               {t("home")}
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink href="#" className="navbar__link">
+            <NavLink to="/about" className="navbar__link">
               {t("about")}
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="#" className="navbar__link">
+            <NavLink to="/projects" className="navbar__link">
               {t("projects")}
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="#" className="navbar__link">
+            <NavLink to="/skills" className="navbar__link">
               {t("skills")}
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="#" className="navbar__link">
+            <NavLink to="/contact" className="navbar__link">
               {t("contact")}
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink to="#" className="navbar__link">
+            <NavLink to="/blog" className="navbar__link">
               {t("blog")}
             </NavLink>
           </li>

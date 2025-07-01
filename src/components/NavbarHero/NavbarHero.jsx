@@ -7,6 +7,8 @@ import { useAppContext } from "../../App";
 import lightBg from "../../assets/HeroBackground.svg";
 import darkBg from "../../assets/HeroBackgroundDarkMode.svg";
 
+import Projects from "../Projects/Projects";
+
 const NavbarHero = () => {
   const { isDark } = useAppContext();
   const img = isDark ? darkBg : lightBg;

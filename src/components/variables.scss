@@ -70,6 +70,7 @@ $imgFolder: "../../assets/";
   --subheading: #{$subheadingColorLight};
   --card-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
   /*  --card-bg: none; */
+  --chips-border: #bfbfbf;
 }
 
 [data-theme="dark"] {
@@ -92,4 +93,5 @@ $imgFolder: "../../assets/";
   --subheading: #{$subheadingColorDark};
   /* --card-bg: #312448; */
   --card-shadow: none;
+  --chips-border: #ecf1ff;
 }

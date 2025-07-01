@@ -1,0 +1,74 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.project {
+  /*  width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-container);
+  box-shadow: var(--card-shadow);
+  padding: 2rem 0;
+  transition: all 0.5s ease-in-out;
+
+  @include media-breakpoint(576px) {
+    width: 80%;
+  }
+  @include media-breakpoint(768px) {
+    width: 100%;
+  }
+  /*  @include media-breakpoint(768px) {
+    flex-direction: row;
+  } */
+  @include media-breakpoint(992px) {
+    width: calc(100% / 3 /* - 2rem */);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include media-breakpoint(1400px) {
+      gap: 2rem;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__url {
+    text-decoration: none;
+  }
+
+  &__description {
+    font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    /* line-height: 0.875rem; */
+    padding: 0 1rem;
+    color: var(--text-primary-color);
+
+    @include media-breakpoint(428px) {
+      font-size: 0.875rem;
+      line-height: 1.3125rem;
+      @include media-breakpoint(1400px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+
+  &__chips {
+    list-style-type: none;
+    padding: 0 1rem;
+    color: var(--text-primary-color);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: var(--outline-accent);
+  }
+}

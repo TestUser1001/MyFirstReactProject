@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="hero__collab">
           <p className="hero__cta">{t("cta-collaboration")}</p>
           <div className="hero__buttons">
-            <button className="btn btn--contact">{t("contact")}</button>
+            <button className="btn btn--contact">{t("getInTouch")}</button>
             <button className="btn btn--resume">{t("resume")}</button>
           </div>
         </div>

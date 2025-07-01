@@ -1,0 +1,22 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.programming-lang {
+  padding: 0 1rem;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  color: var(--text-primary-color);
+  font-size: 0.625rem;
+  flex-wrap: wrap;
+
+  @include media-breakpoint(428px) {
+    font-size: 0.75rem;
+  }
+
+  &__item {
+    border: 1px solid var(--chips-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+}

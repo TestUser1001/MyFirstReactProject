@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <div className="about container">
-      <h2 className="headline">{t("about")}</h2>
+      <h2 className="headline">{t("aboutHeading")}</h2>
       <div className="about-content">
         <div className="about-content__card">
           <h3 className="subheading">{t("personal")}</h3>
