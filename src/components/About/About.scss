@@ -19,7 +19,6 @@
   justify-content: center;
   gap: 2rem;
   margin-bottom: 1rem;
-  /* margin-top: 3.5rem; */
 
   @include media-breakpoint(768px) {
     flex-direction: row;
@@ -27,11 +26,9 @@
     justify-content: start;
     align-items: normal;
     gap: 3rem;
-    /* height: 100%; */
   }
   @include media-breakpoint(1200px) {
     gap: 4rem;
-    /* height: 100%; */
   }
 
   &__card {
@@ -39,10 +36,7 @@
 
     flex-direction: column;
     align-items: center;
-    /* max-height: 23.375rem; */
-
     padding: 0.5rem 2rem 2rem 2rem;
-
     box-shadow: var(--card-shadow);
     background-color: var(--secondary-container);
     border-radius: 0.5rem;
@@ -55,12 +49,8 @@
       width: 50%;
     }
 
-    /* @include media-breakpoint(1400px) {
-      height: 23.375rem;
-    } */
     &--tech {
       gap: 25%;
-      /*  justify-content: space-between; */
     }
   }
 
@@ -82,12 +72,10 @@
     }
 
     @include media-breakpoint(768px) {
-      /*  gap: 1rem; */
       line-height: 2rem;
     }
 
     @include media-breakpoint(1400px) {
-      /*  gap: 1rem; */
       font-size: 1.5rem;
       line-height: 2.25rem;
     }
@@ -126,9 +114,7 @@
   }
 
   &__technologies-list-item {
-    /*  */
     background-color: var(--iconsColor);
-    /* flex: 1 0 auto; */
 
     width: 3rem;
     height: 3rem;

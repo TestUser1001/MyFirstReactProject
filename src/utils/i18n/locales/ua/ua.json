@@ -19,5 +19,14 @@
   "aboutHeading": "Про мене",
   "technologies": "Технології, якими користуюсь",
   "projectsHeading": "Мої проекти",
-  "showMore": "Показати більше"
+  "showMore": "Показати більше",
+  "skillsHeading": "Мої навики",
+  "programLanguages": "Мови програмування",
+  "contactHeading": "Контакти",
+  "namePlaceholder": "І'мя",
+  "emailPlaceholder": "Електронна адреса",
+  "messagePlaceholder": "Повідомлення",
+  "contactText": "Якщо ви маєте будь-які запитання чи хочете співпрацювати, будь-ласка, залиште повідомлення!",
+  "copyright": "  2025 @LB Dev Усі права захищені",
+  "socialMedia": "Зв'язатися зі мною можна в соцмережах"
 }

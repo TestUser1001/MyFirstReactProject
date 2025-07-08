@@ -3,8 +3,8 @@ import React, {
   useState,
   useContext,
   useEffect,
-  lazy,
-  Suspense,
+  /*  lazy,
+  Suspense, */
 } from "react";
 import i18n from "./utils/i18n";
 import NavbarHero from "./components/NavbarHero/NavbarHero";
@@ -14,10 +14,13 @@ import "./App.scss";
 import { useTranslation } from "react-i18next";
 import Preloader from "./components/Interface/Preloader";
 /* import "./components/Interface/Preloader.scss"; */
-/* import Projects from "./components/Projects/Projects"; */
+import Projects from "./components/Projects/Projects";
 import { Routes, Route, Router } from "react-router-dom";
+import Skills from "./components/Skills/Skills";
+import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 
-const Projects = lazy(() => import("./components/Projects/Projects"));
+/* const Projects = lazy(() => import("./components/Projects/Projects")); */
 
 export const themeContext = createContext();
 export const useAppContext = () => useContext(themeContext);
@@ -57,20 +60,13 @@ const App = () => {
     <themeContext.Provider value={{ isDark, toggleTheme }}>
       <div className="App" data-theme={isDark ? "dark" : "light"}>
         <NavbarHero />
-        {/*   <Hero /> */} {/* <Projects /> */}
         <About />
-        <Suspense
-          fallback={
-            <div className="App__loading">
-              <Preloader />
-            </div>
-          }
-        >
-          <Projects />
-        </Suspense>
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
       </div>
     </themeContext.Provider>
-    /*  </BrowserRouter> */
   );
 };
 export default App;

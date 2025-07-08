@@ -16,6 +16,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+
     gap: 2rem;
 
     @include media-breakpoint(428px) {
@@ -29,12 +30,15 @@
     @include media-breakpoint(992px) {
       flex-direction: row;
       align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
       /* width: 100/3; */
     }
   }
 
   &__btn {
-    width: 50%;
+    width: 65%;
 
     @include media-breakpoint(576px) {
       margin-top: 1rem;

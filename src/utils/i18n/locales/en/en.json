@@ -19,5 +19,14 @@
   "aboutHeading": "About me",
   "technologies": "Technologies I use",
   "projectsHeading": "My Projects",
-  "showMore": "Show more"
+  "showMore": "Show more",
+  "skillsHeading": "My Skills",
+  "programLanguages": "Programming languages",
+  "contactHeading": "Contact",
+  "namePlaceholder": "Name",
+  "emailPlaceholder": "E-mail",
+  "messagePlaceholder": "Message",
+  "contactText": "If you have any questions or would like to work together, please send me a message.",
+  "copyright": " @Copyright 2025 All rights reserved by LB Dev.",
+  "socialMedia": "Connect with me on social media"
 }

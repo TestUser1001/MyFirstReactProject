@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 
 const Project = ({ name, url, screenshot_url, build_settings }) => {
-  /* console.log(); */
   const repo_path = build_settings?.repo_path;
   return (
     <div className="project">
@@ -14,13 +13,8 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
             {name.replaceAll("-", " ")}
           </h3>
           <img src={screenshot_url} alt="" className="project__img" />
-          {/* <ul className="project__chips"> */}
-          {/* <li>Html</li>
-            <li>SCSS</li>
-            <li>JavaScript</li> */}
 
           {repo_path && <ProgrammingLanguages repo_path={repo_path} />}
-          {/*  </ul> */}
           <p className="project__description">
             Lorem ipsum elementum pellentesque tristique augue in lectus eu
             gravida viverra accumsan odio in ultrices tristique diam turpis

@@ -1,0 +1,88 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--text-primary-color);
+  font-size: 0.875rem;
+
+  @include media-breakpoint(768px) {
+    font-size: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include media-breakpoint(1200px) {
+    font-size: 1.125rem;
+  }
+  &__connect-text {
+    align-self: center;
+    line-height: 1.5rem;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--text-primary-color);
+    padding-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint(576px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__copy {
+    font-weight: 500;
+    color: var(--outlineColor);
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  &__icons-list {
+    list-style-type: none;
+    display: flex;
+
+    gap: 1.25rem;
+
+    @include media-breakpoint(428px) {
+      gap: 2.5rem;
+    }
+    @include media-breakpoint(576px) {
+      gap: 1.25rem;
+    }
+  }
+
+  &__icons-list-item {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--iconsColor);
+    cursor: pointer;
+
+    &--email {
+      mask: url("../../assets/mail.svg") no-repeat center;
+      -webkit-mask: url("../../assets/mail.svg") no-repeat center;
+    }
+
+    &--linkedIn {
+      mask: url("../../assets/linkedin.svg") no-repeat center;
+      -webkit-mask: url("../../assets/linkedin.svg") no-repeat center;
+    }
+
+    &--facebook {
+      mask: url("../../assets/facebook.svg") no-repeat center;
+      -webkit-mask: url("../../assets/facebook.svg") no-repeat center;
+    }
+
+    &--github {
+      mask: url("../../assets/mail.svg") no-repeat center;
+      -webkit-mask: url("../../assets/github.svg") no-repeat center;
+    }
+  }
+}
