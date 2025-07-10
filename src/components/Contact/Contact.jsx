@@ -4,6 +4,7 @@ import "./Contact.scss";
 import "../../components/typography.scss";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -36,7 +37,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact container">
+    <motion.div
+      initial={{ opacity: 0, translateX: "100%" }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      viewport={{ once: true }}
+      className="contact container"
+    >
       <h2 className="headline">{t("contactHeading")}</h2>
       <p className="contact__cta-text">{t("contactText")}</p>
       <form
@@ -82,7 +89,7 @@ const Contact = () => {
           {t("getInTouch")}
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 export default Contact;

@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import Project from "./Project";
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 const Projects = () => {
   const url = "/.netlify/functions/getProjects";
@@ -34,7 +35,13 @@ const Projects = () => {
   const handleOnClick = () => {};
 
   return (
-    <div className="projects container">
+    <motion.div
+      initial={{ opacity: 0, translateX: "100%" }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      viewport={{ once: true }}
+      className="projects container"
+    >
       <h2 className="headline">{t("projectsHeading")}</h2>
       <div className="projects__wrapper">
         {projects.map((project) => {
@@ -48,7 +55,7 @@ const Projects = () => {
       >
         {t("showMore")}
       </button>
-    </div>
+    </motion.div>
   );
 };
 export default Projects;

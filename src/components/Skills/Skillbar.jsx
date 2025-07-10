@@ -2,8 +2,19 @@ import React from "react";
 import HorizontalBar from "./HorizontalBar";
 import "./Skillbar.scss";
 import { color } from "chart.js/helpers";
-const Skillbar = ({ skillLevels, heading }) => {
-  /*  console.log(skillLevels); */
+
+import { useAppContext } from "../../App";
+
+const Skillbar = ({ skillLevels /* heading */ }) => {
+  const { isDark } = useAppContext();
+  const rootStyles = getComputedStyle(document.documentElement);
+  const barColor = rootStyles.getPropertyValue("--text-primary-color").trim();
+  const hoverColor = rootStyles.getPropertyValue("--bar-hover-color").trim();
+
+  const bg = isDark ? "#cd98e7" : "#6174c1";
+  const categoryColor = isDark ? "#ecf1ff" : "#404040";
+  const borderColor = isDark ? "#ffddfa" : "#000000";
+  console.log(rootStyles);
 
   const options = {
     indexAxis: "y",
@@ -13,10 +24,14 @@ const Skillbar = ({ skillLevels, heading }) => {
       padding: { top: 10, bottom: 10, left: 5, right: 5 },
     }, */
 
+    /*  toolTip: {
+      display: false,
+    }, */
+
     scales: {
       /* display: false, */
       x: {
-        display: false,
+        display: true,
         beginAtZero: true,
         min: 0,
         max: 100,
@@ -31,10 +46,24 @@ const Skillbar = ({ skillLevels, heading }) => {
           /*  beginAtZero: true, */
         },
         title: { display: false /* text: "Y Axis Title" */ },
+        border: {
+          display: false,
+        },
       },
       y: {
-        type: "category",
         beginAtZero: true,
+        ticks: {
+          display: true,
+          color: categoryColor,
+          padding: 2,
+          beginAtZero: true,
+
+          font: {
+            size: 14,
+            family: "Roboto",
+            weight: "bold",
+          },
+        },
 
         /*  drawBorder: false, */
         grid: {
@@ -45,6 +74,10 @@ const Skillbar = ({ skillLevels, heading }) => {
 
           /*  border: false, */
         },
+
+        border: {
+          display: false,
+        },
       },
     },
 
@@ -53,8 +86,15 @@ const Skillbar = ({ skillLevels, heading }) => {
         display: false,
       },
       title: {
-        display: true,
-        text: heading,
+        display: false,
+        /*  text: heading,
+        font:{
+
+        } */
+      },
+      tooltip: {
+        enabled: false,
+        display: false,
       },
     },
 
@@ -72,45 +112,27 @@ const Skillbar = ({ skillLevels, heading }) => {
 
   const labels = skillLevels.map((level) => level.title);
   /*  const labels = []; */
-  console.log(labels);
+
   const data = {
     labels,
     datasets: [
       {
         label: "1",
         data: skillLevels.map((level) => level.level), // Example data
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: bg,
+        borderRadius: 8,
+        barThickness: 16,
+        categoryPercentage: 0.9,
+        /*    borderColor: borderColor,
+        borderWidth: 2, */
       },
     ],
   };
-
+  /*   console.log(data); */
   return (
     <div className="skillbar" /* style={{ height: "200px" }} */>
       <HorizontalBar data={data} options={options} />
     </div>
-    /*  <div>
-      <Swiper
-        modules={[Navigation]}
-        navigation={true}
-        breakpoints={{ 320: { slidesPerView: 1 }, 768: { slidesPerView: 3 } }}
-        spaceBetween={50}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        className="skills__slider-container"
-      >
-        {skillLevels.map(({ title, level }) => {
-          return (
-            <SwiperSlide key={title}>
-              <div className="skills__slide">
-                <div className="skills__languages">
-                  <Skill percentage={level} title={title} />
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div> */
   );
 };
 export default Skillbar;

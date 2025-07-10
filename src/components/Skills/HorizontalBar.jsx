@@ -21,5 +21,6 @@ ChartJS.register(
 );
 
 export default function HorizontalBar({ data, options }) {
+  /*  console.log(options); */
   return <Bar data={data} options={options} />;
 }

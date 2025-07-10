@@ -28,5 +28,8 @@
   "messagePlaceholder": "Message",
   "contactText": "If you have any questions or would like to work together, please send me a message.",
   "copyright": " @Copyright 2025 All rights reserved by LB Dev.",
-  "socialMedia": "Connect with me on social media"
+  "socialMedia": "Connect with me on social media",
+  "programmingLanguages": "Programming languages",
+  "frameworks": "Frameworks",
+  "tools": "tools"
 }

@@ -3,18 +3,17 @@ import "./Skills.scss";
 import "../../components/layout.scss";
 import { useTranslation } from "react-i18next";
 import Skillbar from "./Skillbar";
+import { motion } from "motion/react";
 
 const Skills = () => {
   const { t } = useTranslation();
-  /* const levels = { html: 85, js: 20 }; */
+
   const languageLevels = [
     { title: "html", level: 89 },
     { title: "css", level: 85 },
     { title: "javaScript", level: 20 },
     { title: "typeScript", level: 0 },
   ];
-
-  const languages = "programmingLanguages";
 
   const frameworkLevels = [
     { title: "bootstrap", level: 70 },
@@ -23,7 +22,6 @@ const Skills = () => {
     { title: "tailwind", level: 0 },
     { title: "reactNative", level: 0 },
   ];
-  const frameworks = "frameworks";
 
   const toolsLevels = [
     { title: "gitHub", level: 50 },
@@ -32,21 +30,22 @@ const Skills = () => {
     { title: "photoshop", level: 30 },
   ];
 
-  const tools = "tools";
-
-  /*   console.log(data); */
   return (
-    <div className="skills container">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      viewport={{ once: true }}
+      className="skills container"
+    >
       <h2 className="headline">{t("skillsHeading")}</h2>
-      {/* <h3 className="subheading">{t("programLanguages")}</h3>
+      <h3 className="subheading">{t("programmingLanguages")}</h3>
       <Skillbar skillLevels={languageLevels} />
-      <h3 className="subheading">{t("programLanguages")}</h3>
-      <Skillbar skillLevels={languageLevels} />
-      <h3 className="subheading">{t("programLanguages")}</h3>*/}
-      <Skillbar skillLevels={languageLevels} heading={languages} />
-      <Skillbar skillLevels={frameworkLevels} heading={frameworks} />
-      <Skillbar skillLevels={toolsLevels} heading={tools} />
-    </div>
+      <h3 className="subheading">{t("frameworks")}</h3>
+      <Skillbar skillLevels={frameworkLevels} />
+      <h3 className="subheading">{t("Tools")}</h3>
+      <Skillbar skillLevels={toolsLevels} />
+    </motion.div>
   );
 };
 export default Skills;

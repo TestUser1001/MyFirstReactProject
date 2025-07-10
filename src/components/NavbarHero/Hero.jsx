@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../App";
 import "../../components/help_classes.scss";
 import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const { isDark } = useAppContext();
@@ -13,7 +14,7 @@ const Hero = () => {
   const viewResume = () => {};
 
   return (
-    <div className="hero container">
+    <div animate={{ x: -100 }} className="hero container">
       <div className="hero__intro">
         <div className="hero__all-intro">
           <div className="hero__left">
