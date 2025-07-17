@@ -51,7 +51,7 @@ $btn-background-dark: linear-gradient(111.059deg, #eeedef 0%, #c480fe 100%);
 //Other
 $imgFolder: "../../assets/";
 :root {
-  --background-color: #{$whiteColor};
+  --background-color: #fff;
   --text-primary-color: #{$mainColorLight};
   /*  --navbar-hero-bg-img: url("../../assets/HeroBackground.svg"); */
   --modeSwitcherBg: #{$whiteColor};
@@ -74,7 +74,7 @@ $imgFolder: "../../assets/";
 }
 
 [data-theme="dark"] {
-  --background-color: #{$backgroundColorDark};
+  --background-color: #11002f;
   --text-primary-color: #{$mainColorDark};
   /*   --navbar-hero-bg-img: url("../../assets/HeroBackgroundDarkMode.svg"); */
   --modeSwitcherBg: #{$iconsColorDark};

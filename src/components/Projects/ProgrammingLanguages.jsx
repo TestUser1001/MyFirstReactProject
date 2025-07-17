@@ -8,6 +8,7 @@ const ProgrammingLanguages = ({ repo_path }) => {
   const [isError, setIsError] = useState(null);
 
   const url = `https://api.github.com/repos/${repo_path}/languages`;
+  /*  console.log(url); */
 
   useEffect(() => {
     const fetchLang = async () => {

@@ -37,7 +37,7 @@
     }
   }
 
-  &__btn {
+  button {
     width: 65%;
 
     @include media-breakpoint(576px) {

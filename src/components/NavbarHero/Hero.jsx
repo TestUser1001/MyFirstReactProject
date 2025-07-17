@@ -7,6 +7,7 @@ import { useAppContext } from "../../App";
 import "../../components/help_classes.scss";
 import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
 import { motion } from "motion/react";
+import Resume from "../../assets/front_end_developer.pdf";
 
 const Hero = () => {
   const { isDark } = useAppContext();
@@ -14,7 +15,7 @@ const Hero = () => {
   const viewResume = () => {};
 
   return (
-    <div animate={{ x: -100 }} className="hero container">
+    <div className="hero container" id="hero">
       <div className="hero__intro">
         <div className="hero__all-intro">
           <div className="hero__left">
@@ -32,7 +33,9 @@ const Hero = () => {
           <div className="hero__buttons">
             <button className="btn btn--contact">{t("getInTouch")}</button>
             <button className="btn btn--resume" onClick={viewResume}>
-              {t("resume")}
+              <a href={Resume} target="_blank">
+                {t("resume")}
+              </a>
             </button>
           </div>
         </div>

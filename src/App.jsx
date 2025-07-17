@@ -7,7 +7,8 @@ import React, {
   Suspense, */
 } from "react";
 import i18n from "./utils/i18n";
-import NavbarHero from "./components/NavbarHero/NavbarHero";
+import { BrowserRouter } from "react-router-dom";
+/* import NavbarHero from "./components/NavbarHero/NavbarHero"; */
 import About from "./components/About/About";
 import "./App.scss";
 
@@ -19,6 +20,11 @@ import { Routes, Route, Router } from "react-router-dom";
 import Skills from "./components/Skills/Skills";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import Navbar from "./components/NavbarHero/Navbar";
+import Hero from "./components/NavbarHero/Hero";
+import "./components/NavbarHero/NavbarHero.scss";
+import lightBgHero from "./assets/HeroBackground.svg";
+import darkBgHero from "./assets/HeroBackgroundDarkMode.svg";
 
 /* const Projects = lazy(() => import("./components/Projects/Projects")); */
 
@@ -29,6 +35,7 @@ const App = () => {
   const [isDark, setIsDark] = useState(false);
   const [i18nReady, setI18nReady] = useState(false);
   const { t } = useTranslation();
+  const img = isDark ? darkBgHero : lightBgHero;
 
   const toggleTheme = () => {
     setIsDark((prev) => {
@@ -58,14 +65,31 @@ const App = () => {
 
   return (
     <themeContext.Provider value={{ isDark, toggleTheme }}>
-      <div className="App" data-theme={isDark ? "dark" : "light"}>
-        <NavbarHero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div className="App" data-theme={isDark ? "dark" : "light"}>
+          {/* <NavbarHero /> */}
+          <div
+            className="NavbarHero"
+            style={{ backgroundImage: `url(${img})` }}
+          >
+            <Navbar />
+            {/*   <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes> */}
+
+            <Hero />
+          </div>
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+          <Footer />
+        </div>
+      </BrowserRouter>
     </themeContext.Provider>
   );
 };

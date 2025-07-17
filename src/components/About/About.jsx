@@ -14,6 +14,7 @@ const About = () => {
       transition={{ duration: 2, ease: "easeInOut" }}
       viewport={{ once: true }}
       className="about container"
+      id="about"
     >
       <h2 className="headline">{t("aboutHeading")}</h2>
       <div className="about-content">

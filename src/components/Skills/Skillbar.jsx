@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import HorizontalBar from "./HorizontalBar";
 import "./Skillbar.scss";
 import { color } from "chart.js/helpers";
 
 import { useAppContext } from "../../App";
 
-const Skillbar = ({ skillLevels /* heading */ }) => {
+const Skillbar = ({ skillLevels, chartRef }) => {
   const { isDark } = useAppContext();
-  const rootStyles = getComputedStyle(document.documentElement);
-  const barColor = rootStyles.getPropertyValue("--text-primary-color").trim();
+  /* const rootStyles = getComputedStyle(document.documentElement); */
+  /* const barColor = rootStyles.getPropertyValue("--text-primary-color").trim();
   const hoverColor = rootStyles.getPropertyValue("--bar-hover-color").trim();
-
+ */
+  /*  const dataLabelColor = isDark ? "" : ""; */
   const bg = isDark ? "#cd98e7" : "#6174c1";
   const categoryColor = isDark ? "#ecf1ff" : "#404040";
   const borderColor = isDark ? "#ffddfa" : "#000000";
-  console.log(rootStyles);
+  /*  console.log(rootStyles); */
 
   const options = {
     indexAxis: "y",
@@ -96,16 +97,34 @@ const Skillbar = ({ skillLevels /* heading */ }) => {
         enabled: false,
         display: false,
       },
+
+      datalabels: {
+        anchor: "end", // position of label relative to bar
+        align: "right", // align text to the right
+        formatter: (value) => `${value}%`, // format value as percent
+        color: categoryColor, // label color
+        font: {
+          weight: "bold",
+          size: 12,
+        },
+        padding: {
+          right: 6,
+        },
+      },
     },
 
     animation: {
       x: {
-        duration: 1000,
-        easing: "easeInOutBack",
+        duration: 1500,
+        easing: "easeInOutCubic",
+        from: 0,
+        delay: 0,
       },
       y: {
         duration: 1500,
-        easing: "easeInOutElastic",
+        easing: "easeInOutCubic",
+        from: 0,
+        delay: 0,
       },
     },
   };
@@ -131,7 +150,7 @@ const Skillbar = ({ skillLevels /* heading */ }) => {
   /*   console.log(data); */
   return (
     <div className="skillbar" /* style={{ height: "200px" }} */>
-      <HorizontalBar data={data} options={options} />
+      <HorizontalBar data={data} options={options} chartRef={chartRef} />
     </div>
   );
 };

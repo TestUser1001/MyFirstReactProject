@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Bar } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,10 +18,16 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartDataLabels
 );
 
-export default function HorizontalBar({ data, options }) {
+export default function HorizontalBar({
+  data,
+  options,
+  chartRef /* onAnimate */,
+}) {
+  /*   const chartRef = useRef(null); */
   /*  console.log(options); */
-  return <Bar data={data} options={options} />;
+  return <Bar ref={chartRef} data={data} options={options} />;
 }

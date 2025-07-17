@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
+import { HashLink as Link } from "react-router-hash-link";
 import "./navbar.scss";
 import "../../components/layout.scss";
 import LangSwitcher from "../Interface/LanguageSwitcher";
@@ -21,46 +22,46 @@ const Navbar = () => {
 
   return (
     <nav className="container navbar">
-      <NavLink to="/">
+      <Link to="/">
         <img
           src={isDark ? logoDark : logoLight}
           alt=""
           className="navbar__logo"
         />
-      </NavLink>
+      </Link>
 
       <div className="navbar__right">
         <ul className={`navbar__links ${!menuClosed ? "visible" : ""} `}>
           <li className="navbar__item">
-            <NavLink to="/" className="navbar__link">
+            <Link to="/" className="navbar__link">
               {t("home")}
-            </NavLink>
+            </Link>
           </li>
           <li className="navbar__item">
-            <NavLink to="/about" className="navbar__link">
+            <Link to="#about" className="navbar__link">
               {t("about")}
-            </NavLink>
+            </Link>
           </li>
           <li className="navbar__item">
-            <NavLink to="/projects" className="navbar__link">
+            <Link to="#projects" className="navbar__link">
               {t("projects")}
-            </NavLink>
+            </Link>
           </li>
           <li className="navbar__item">
-            <NavLink to="/skills" className="navbar__link">
+            <Link to="#skills" className="navbar__link">
               {t("skills")}
-            </NavLink>
+            </Link>
           </li>
           <li className="navbar__item">
-            <NavLink to="/contact" className="navbar__link">
+            <Link to="#contact" className="navbar__link">
               {t("contact")}
-            </NavLink>
+            </Link>
           </li>
-          <li className="navbar__item">
-            <NavLink to="/blog" className="navbar__link">
+          {/*   <li className="navbar__item">
+            <Link to="#blog" className="navbar__link">
               {t("blog")}
-            </NavLink>
-          </li>
+            </Link>
+          </li> */}
 
           <div className="navbar__item--switcher">
             <LangSwitcher />

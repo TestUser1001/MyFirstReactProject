@@ -38,11 +38,12 @@ const Contact = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, translateX: "100%" }}
-      whileInView={{ opacity: 1, translateX: 0 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2, ease: "easeInOut" }}
       viewport={{ once: true }}
       className="contact container"
+      id="contact"
     >
       <h2 className="headline">{t("contactHeading")}</h2>
       <p className="contact__cta-text">{t("contactText")}</p>
