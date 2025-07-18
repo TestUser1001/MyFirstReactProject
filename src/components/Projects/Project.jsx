@@ -1,41 +1,20 @@
-import React, { useState, useEffect /* useRef */ } from "react";
+import React from "react";
 import "./Project.scss";
 import { NavLink } from "react-router-dom";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 import { motion } from "motion/react";
-import axios from "axios";
+import UseFetch from "../UseFetch";
+import Preloader from "../Interface/Preloader";
+import Description from "./Description";
 
 const Project = ({ name, url, screenshot_url, build_settings }) => {
   const repo_path = build_settings?.repo_path;
-  /*  const defaultText = */
-  /*  ? "This project was deployed manually and is not connected to GitHub." */
-  /* : description; */
-  const urlDescription = `https://api.github.com/repos/${repo_path}`;
+  const defaultDescriptionText =
+    "This project was deployed manually and is not connected to GitHub. ";
 
-  const [description, setDescription] = useState(
-    "This project was deployed manually and is not connected to GitHub"
-  );
-  const [isError, setIsError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  /*  const projectRef = useRef(null); */
+  /*  if (repo_path) { */
 
-  useEffect(() => {
-    const fetchDesc = async () => {
-      try {
-        if (!repo_path) return;
-        const response = await axios.get(urlDescription);
-
-        setDescription(response.data.description);
-      } catch (error) {
-        setIsError(error);
-        setIsLoading(false);
-      } finally {
-        setIsLoading(true);
-      }
-    };
-
-    fetchDesc();
-  }, []);
+  /*  } */
 
   return (
     <motion.div
@@ -44,16 +23,8 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
       transition={{ duration: 2, ease: "easeInOut" }}
       viewport={{ once: true }}
       className="project"
-      /*  onAnimationComplete={() => {
-        projectRef.current?.resize();
-        projectRef.current?.update();
-      }} */
     >
-      <a
-        href={url}
-        className="project__url"
-        target="_blank" /* ref={projectRef} */
-      >
+      <a href={url} className="project__url" target="_blank">
         <div className="project__card">
           <h3 className="subheading subheading--card">
             {name.replaceAll("-", " ")}
@@ -61,7 +32,11 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
           <img src={screenshot_url} alt="" className="project__img" />
 
           {repo_path && <ProgrammingLanguages repo_path={repo_path} />}
-          <p className="project__description">{description}</p>
+          {repo_path ? (
+            <Description repo_path={repo_path} />
+          ) : (
+            <p className="project__description">{defaultDescriptionText}</p>
+          )}
         </div>
       </a>
     </motion.div>

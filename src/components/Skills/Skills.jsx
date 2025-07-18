@@ -69,7 +69,7 @@ const Skills = () => {
         skillLevels={frameworkLevels}
         chartRef={frameworkRef} /* onAnimate */
       />
-      <h3 className="subheading">{t("Tools")}</h3>
+      <h3 className="subheading">{t("tools")}</h3>
       <Skillbar skillLevels={toolsLevels} chartRef={toolsRef} /* onAnimate */ />
     </motion.div>
   );

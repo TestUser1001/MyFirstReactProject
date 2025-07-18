@@ -51,7 +51,7 @@
 }
 
 .toggle__input:checked + .slider {
-  background-color: $iconsColorDark;
+  background-color: var(--iconsColor);
 }
 
 .toggle__input:checked + .slider::before {
