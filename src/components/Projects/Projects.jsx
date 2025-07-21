@@ -3,12 +3,12 @@ import "./Projects.scss";
 import Project from "./Project";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
-import UseFetch from "../UseFetch";
+import useFetch from "../Hooks/useFetch";
 import Preloader from "../Interface/Preloader";
 
 const Projects = () => {
   const url = "/.netlify/functions/getProjects";
-  const { isLoading, isError, data: projects } = UseFetch(url);
+  const { isLoading, isError, data: projects } = useFetch(url);
 
   const [projectsPerPage, setProjectsPerPage] = useState(3);
   const [isDisabled, setIsDisabled] = useState(false);

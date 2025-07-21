@@ -3,7 +3,7 @@ import "./Project.scss";
 import { NavLink } from "react-router-dom";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 import { motion } from "motion/react";
-import UseFetch from "../UseFetch";
+/* import UseFetch from "../useFetch"; */
 import Preloader from "../Interface/Preloader";
 import Description from "./Description";
 
@@ -11,10 +11,6 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
   const repo_path = build_settings?.repo_path;
   const defaultDescriptionText =
     "This project was deployed manually and is not connected to GitHub. ";
-
-  /*  if (repo_path) { */
-
-  /*  } */
 
   return (
     <motion.div

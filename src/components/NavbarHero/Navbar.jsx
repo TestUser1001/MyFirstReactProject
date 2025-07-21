@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-/* import { Link } from "react-router-dom"; */
 import { HashLink as Link } from "react-router-hash-link";
 import "./navbar.scss";
 import "../../components/layout.scss";
@@ -57,11 +56,6 @@ const Navbar = () => {
               {t("contact")}
             </Link>
           </li>
-          {/*   <li className="navbar__item">
-            <Link to="#blog" className="navbar__link">
-              {t("blog")}
-            </Link>
-          </li> */}
 
           <div className="navbar__item--switcher">
             <LangSwitcher />
