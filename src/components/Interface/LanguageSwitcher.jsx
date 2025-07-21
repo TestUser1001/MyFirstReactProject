@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
       options={LANGUAGES}
       onChange={handleOnChange}
       value={language}
-      className="lang"
+      className="language_switcher"
       styles={selectStyles}
     />
   );
