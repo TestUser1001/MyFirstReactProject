@@ -2,11 +2,4 @@
 
 .App {
   background-color: var(--background-color);
-
-  &__loading {
-    display: flex;
-    width: 10%;
-    height: 10%;
-    margin: 5rem auto;
-  }
 }

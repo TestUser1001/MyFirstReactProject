@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import menuMobile from "../../assets/Menu.svg";
 import menuMobileDark from "../../assets/MenuDark.svg";
 import menuCloseLight from "../../assets/MenuCloseLight.svg";
