@@ -11,6 +11,7 @@ import logoLight from "../../assets/logo_light.svg";
 import logoDark from "../../assets/logo_dark.svg";
 import MenuMobile from "../Interface/MenuMobile";
 import { useTranslation } from "react-i18next";
+import clsx from "clsx";
 
 const Navbar = () => {
   const { isDark } = useAppContext();
@@ -20,7 +21,11 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="container navbar">
+    <nav
+      className="container navbar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <Link to="/">
         <img
           src={isDark ? logoDark : logoLight}
@@ -30,7 +35,7 @@ const Navbar = () => {
       </Link>
 
       <div className="navbar__right">
-        <ul className={`navbar__links ${!menuClosed ? "visible" : ""} `}>
+        <ul className={clsx("navbar__links", { visible: !menuClosed })}>
           <li className="navbar__item">
             <Link to="/" className="navbar__link">
               {t("home")}
@@ -57,9 +62,9 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <div className="navbar__item--switcher">
+          <li className="navbar__item--switcher">
             <LangSwitcher />
-          </div>
+          </li>
         </ul>
 
         <div className="navbar__switchers">
