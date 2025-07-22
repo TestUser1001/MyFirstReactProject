@@ -3,13 +3,11 @@ import "../layout.scss";
 import "./Hero.scss";
 import photo from "../../assets/Photo.svg";
 import { useTranslation } from "react-i18next";
-import { useAppContext } from "../../App";
 import "../../components/help_classes.scss";
 import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
 import Resume from "../../assets/front_end_developer.pdf";
 
 const Hero = () => {
-  const { isDark } = useAppContext();
   const { t, i18n } = useTranslation();
   const viewResume = () => {};
 

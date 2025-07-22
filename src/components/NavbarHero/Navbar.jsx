@@ -24,7 +24,7 @@ const Navbar = () => {
       <Link to="/">
         <img
           src={isDark ? logoDark : logoLight}
-          alt=""
+          alt="Logo"
           className="navbar__logo"
         />
       </Link>

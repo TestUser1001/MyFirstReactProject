@@ -4,11 +4,13 @@ import "./Preloader.scss";
 
 const Preloader = () => {
   return (
-    <img
-      src={PreloaderSpinner}
-      alt="Preloader spinner"
-      className="preloader_spinner"
-    ></img>
+    <div className="preloader">
+      <img
+        src={PreloaderSpinner}
+        alt="Loading..."
+        className="preloader__spinner"
+      ></img>
+    </div>
   );
 };
 export default Preloader;

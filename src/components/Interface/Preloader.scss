@@ -1,6 +1,14 @@
-.preloader_spinner {
+@use "../variables.scss" as *;
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  width: 10%;
-  height: 10%;
-  margin: 5rem auto;
+  justify-content: center;
+  align-items: center;
+  background: #ffddfa;
+  &__spinner {
+    width: 10%;
+    height: 10%;
+  }
 }

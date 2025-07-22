@@ -47,7 +47,7 @@ const App = () => {
 
   if (!i18nReady)
     return (
-      <div className="App__loading">
+      <div>
         <Preloader />
       </div>
     );

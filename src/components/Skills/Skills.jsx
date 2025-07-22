@@ -26,13 +26,13 @@ const Skills = () => {
     { title: "html", level: 89 },
     { title: "css", level: 85 },
     { title: "javaScript", level: 20 },
-    { title: "typeScript", level: 0 },
+    { title: "typeScript", level: 0.2 },
   ];
 
   const frameworkLevels = [
     { title: "bootstrap", level: 70 },
     { title: "reactJs", level: 40 },
-    { title: "nextJS", level: 0 },
+    { title: "nextJS", level: 0.5 },
     { title: "tailwind", level: 0 },
     { title: "reactNative", level: 0 },
   ];

@@ -7,13 +7,14 @@ const ThemeToggle = () => {
 
   return (
     <div className="toggle">
-      <label htmlFor="toggle" className="toggle__switch" id="switch">
+      <label htmlFor="toggle" className="toggle__switch">
         <input
           type="checkbox"
           className="toggle__input"
           id="toggle"
           onChange={toggleTheme}
           checked={isDark}
+          aria-label="Toggle dark mode"
         />
         <span className="slider slider__round"></span>
       </label>
