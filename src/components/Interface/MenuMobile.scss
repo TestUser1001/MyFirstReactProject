@@ -8,6 +8,9 @@
   cursor: pointer;
   z-index: 4;
   transition: all 0.5s ease-in-out;
+  &:focus {
+    outline: 1px solid var(--outlineColor);
+  }
 
   @include media-breakpoint(768px) {
     display: none;
@@ -15,7 +18,7 @@
   }
 }
 
-.transform {
+.menu-btn--rotated {
   transform: rotate(360deg);
   transition: transform 0.5s ease-in-out;
 

@@ -9,22 +9,24 @@ import { useAppContext } from "../../App";
 const MenuMobile = ({ menuClosed, setMenuClosed }) => {
   const { isDark } = useAppContext();
 
-  const setIsMobile = () => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768 || !menuClosed) setMenuClosed(true);
-    });
-  };
-
   useEffect(() => {
-    setIsMobile();
-  }, []);
+    const handleResize = () => {
+      if (window.innerWidth > 768 && !menuClosed) {
+        setMenuClosed(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [menuClosed]);
 
   return (
     <button
-      className={`menu-btn ${menuClosed ? "transform" : ""}`}
+      className={`menu-btn ${menuClosed ? "menu-btn--rotated " : ""}`}
       onClick={() => {
-        setMenuClosed(!menuClosed);
+        setMenuClosed((prev) => !prev);
       }}
+      aria-label={menuClosed ? "Open menu" : "Close menu"}
     >
       <img
         src={
@@ -36,7 +38,7 @@ const MenuMobile = ({ menuClosed, setMenuClosed }) => {
             ? menuCloseDark
             : menuCloseLight
         }
-        alt=""
+        alt={menuClosed ? "Open menu" : "Close menu"}
       />
     </button>
   );
