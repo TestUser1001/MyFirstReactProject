@@ -2,11 +2,9 @@ import React from "react";
 import "../../components/layout.scss";
 import "../Footer/Footer.scss";
 import { useTranslation } from "react-i18next";
-import { useAppContext } from "../../App";
 
 const Footer = () => {
   const { t } = useTranslation();
-  const { isDark } = useAppContext();
   return (
     <footer className="footer container" id="footer">
       <div className="footer__top">

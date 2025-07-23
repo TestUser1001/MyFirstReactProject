@@ -22,7 +22,6 @@
 
   @include media-breakpoint(768px) {
     flex-direction: row;
-
     justify-content: start;
     align-items: normal;
     gap: 3rem;
@@ -33,7 +32,6 @@
 
   &__card {
     display: flex;
-
     flex-direction: column;
     align-items: center;
     padding: 0.5rem 2rem 2rem 2rem;
@@ -50,7 +48,7 @@
     }
 
     &--tech {
-      gap: 25%;
+      gap: 2.5rem;
     }
   }
 
@@ -69,11 +67,11 @@
     @include media-breakpoint(768px) {
       gap: 1rem;
       font-size: 1rem;
-    }
-
-    @include media-breakpoint(768px) {
       line-height: 2rem;
     }
+
+    /* @include media-breakpoint(768px) {
+    } */
 
     @include media-breakpoint(1400px) {
       font-size: 1.5rem;
@@ -90,17 +88,10 @@
       mask: url("../../assets/check_l.svg") no-repeat center;
       -webkit-mask: url("../../assets/check_l.svg") no-repeat center;
       background-color: var(--iconsColor);
-
       width: 1.5rem;
       height: 1.5rem;
       display: block;
     }
-  }
-
-  &__technologies {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   &__technologies-list {
@@ -125,23 +116,19 @@
     }
 
     &--html {
-      mask: url("../../assets/Html.svg") no-repeat center;
-      -webkit-mask: url("../../assets/Html.svg") no-repeat center;
+      @include mask("../../assets/Html.svg");
     }
 
     &--css {
-      mask: url("../../assets/CSS3.svg") no-repeat center;
-      -webkit-mask: url("../../assets/CSS3.svg") no-repeat center;
+      @include mask("../../assets/CSS3.svg");
     }
 
     &--js {
-      mask: url("../../assets/JS.svg") no-repeat center;
-      -webkit-mask: url("../../assets/JS.svg") no-repeat center;
+      @include mask("../../assets/JS.svg");
     }
 
     &--react {
-      mask: url("../../assets/reactLight.svg") no-repeat center;
-      -webkit-mask: url("../../assets/reactLight.svg") no-repeat center;
+      @include mask("../../assets/reactLight.svg");
     }
   }
 }

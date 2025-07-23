@@ -13,3 +13,8 @@
     @content;
   }
 }
+
+@mixin mask($path) {
+  mask: url($path) no-repeat center;
+  -webkit-mask: url($path) no-repeat center;
+}
