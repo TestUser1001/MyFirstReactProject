@@ -1,0 +1,66 @@
+@use "../mixins.scss" as *;
+@use "../variables.scss" as *;
+
+.warning-error {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 2fr;
+  gap: 1.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /* width: 90%; */
+  border-radius: 0.5rem;
+
+  @include media-breakpoint(576px) {
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: 1fr 11fr;
+  }
+
+  &--error {
+    border: 2px solid $errorColor;
+    background-color: $errorContainer;
+  }
+  &--warning {
+    border: 2px solid $warningColor;
+    background-color: $warningContainer;
+  }
+
+  &__img {
+    width: 6rem;
+    height: 6rem;
+    @include media-breakpoint(768px) {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
+
+    &--error {
+      @include bg-img("Error.svg");
+    }
+
+    &--warning {
+      @include bg-img("Warning.svg");
+    }
+  }
+
+  &__msg {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+
+    @include media-breakpoint(768px) {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
+
+    &--warning {
+      color: $warningColor;
+    }
+
+    &--error {
+      color: $errorColor;
+    }
+  }
+}

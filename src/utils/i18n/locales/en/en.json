@@ -31,5 +31,6 @@
   "socialMedia": "Connect with me on social media",
   "programmingLanguages": "Programming languages",
   "frameworks": "Frameworks",
-  "tools": "tools"
+  "tools": "tools",
+  "noProjects": "There are no projects found!"
 }

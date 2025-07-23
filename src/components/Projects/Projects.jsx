@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import useFetch from "../Hooks/useFetch";
 import Preloader from "../Interface/Preloader";
+import WarningError from "../Interface/WarningErrorMessage";
 
 const Projects = () => {
   const url = "/.netlify/functions/getProjects";
@@ -18,6 +19,7 @@ const Projects = () => {
   const handleOnClick = () => {
     setProjectsPerPage((prev) => {
       const newCount = Math.min(prev + 3, projects.length);
+      console.log(newCount);
       if (newCount >= projects.length) {
         setIsDisabled(true);
       }
@@ -25,11 +27,24 @@ const Projects = () => {
     });
   };
 
-  /* console.log(isLoading); */
   if (isLoading) return <Preloader />;
-  if (isError) return <div>{isError.message}</div>;
-  const visibleProjects = projects.slice(0, projectsPerPage);
-  /* console.table(visibleProjects); */
+  if (isError)
+    return (
+      <WarningError
+        message={`Something went wrong during fetching the projects: ${isError.message}`}
+        type={"error"}
+      />
+    );
+  if (!projects.length)
+    return (
+      <div className="container">
+        <h2 className="headline">{t("projectsHeading")} </h2>
+        <WarningError message={t("noProjects")} type="warning" />
+      </div>
+    );
+
+  const visibleProjects = (projects ?? []).slice(0, projectsPerPage);
+
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0.9 }}
@@ -40,13 +55,14 @@ const Projects = () => {
       id="projects"
     >
       <h2 className="headline">{t("projectsHeading")}</h2>
+
       <div className="projects__wrapper">
         {visibleProjects.map((project) => {
           return <Project key={project.id} {...project} />;
         })}
       </div>
 
-      {!isDisabled && (
+      {!isDisabled && projects.length >= projectsPerPage && (
         <button
           disabled={isDisabled}
           className="btn btn--resume "
