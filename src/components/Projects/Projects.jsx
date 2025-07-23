@@ -31,7 +31,7 @@ const Projects = () => {
   const visibleProjects = projects.slice(0, projectsPerPage);
   /* console.table(visibleProjects); */
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2, ease: "easeInOut" }}
@@ -55,7 +55,7 @@ const Projects = () => {
           {t("showMore")}
         </button>
       )}
-    </motion.div>
+    </motion.section>
   );
 };
 export default Projects;

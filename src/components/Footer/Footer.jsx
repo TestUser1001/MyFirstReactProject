@@ -8,7 +8,7 @@ const Footer = () => {
   const { t } = useTranslation();
   const { isDark } = useAppContext();
   return (
-    <div className="footer container" id="footer">
+    <footer className="footer container" id="footer">
       <div className="footer__top">
         <p className="footer__connect-text">{t("socialMedia")}</p>
         <div className="footer__social-icons">
@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="footer__bottom">
         <p className="footer__copy">{t("copyright")}</p>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

@@ -8,7 +8,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2, ease: "easeInOut" }}
@@ -36,7 +36,7 @@ const About = () => {
           </ul>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 export default About;

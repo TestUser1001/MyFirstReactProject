@@ -9,10 +9,9 @@ import Resume from "../../assets/front_end_developer.pdf";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
-  const viewResume = () => {};
 
   return (
-    <div className="hero container" id="hero">
+    <section className="hero container" id="hero">
       <div className="hero__intro">
         <div className="hero__all-intro">
           <div className="hero__left">
@@ -21,23 +20,32 @@ const Hero = () => {
             <p className="hero__cooperate">{t("collaborate")}</p>
           </div>
           <div className="hero__avatar-responsive">
-            <img src={photo} alt="" className="hero__avatar" />
+            <img
+              src={photo}
+              alt="job seeker's photo"
+              className="hero__avatar"
+            />
           </div>
         </div>
 
         <div className="hero__collab">
           <p className="hero__cta">{t("cta-collaboration")}</p>
-          <div className="hero__buttons">
-            <button className="btn btn--contact">{t("getInTouch")}</button>
-            <button className="btn btn--resume" onClick={viewResume}>
-              <a href={Resume} target="_blank">
-                {t("resume")}
-              </a>
-            </button>
-          </div>
+          <section className="hero__buttons" aria-label="call to actions">
+            <a href="#contact" className="btn btn--contact" id="contact-btn">
+              {t("getInTouch")}
+            </a>
+            <a
+              href={Resume}
+              target="_blank"
+              className="btn btn--resume"
+              rel="noopener noreferrer"
+            >
+              {t("resume")}
+            </a>
+          </section>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Hero;

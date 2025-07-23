@@ -2,6 +2,7 @@
 
 $whiteColor: #ffffff;
 $blackColor: #000000;
+/* ; */
 
 //Other
 $imgFolder: "../../assets/";
@@ -28,6 +29,7 @@ $imgFolder: "../../assets/";
   --subheading: #5343d1;
   --card-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
   --chips-border: #bfbfbf;
+  --z-navbar: 2;
 }
 
 [data-theme="dark"] {

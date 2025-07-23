@@ -49,7 +49,7 @@ const Skills = () => {
   }; */
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2, ease: "easeInOut" }}
@@ -71,7 +71,7 @@ const Skills = () => {
       />
       <h3 className="subheading">{t("tools")}</h3>
       <Skillbar skillLevels={toolsLevels} chartRef={toolsRef} /* onAnimate */ />
-    </motion.div>
+    </motion.section>
   );
 };
 export default Skills;
