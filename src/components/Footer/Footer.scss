@@ -65,24 +65,26 @@
     background-color: var(--iconsColor);
     cursor: pointer;
 
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     &--email {
-      mask: url("../../assets/mail.svg") no-repeat center;
-      -webkit-mask: url("../../assets/mail.svg") no-repeat center;
+      @include mask("../../assets/mail.svg");
     }
 
     &--linkedIn {
-      mask: url("../../assets/linkedin.svg") no-repeat center;
-      -webkit-mask: url("../../assets/linkedin.svg") no-repeat center;
+      @include mask("../../assets/linkedin.svg");
     }
 
     &--facebook {
-      mask: url("../../assets/facebook.svg") no-repeat center;
-      -webkit-mask: url("../../assets/facebook.svg") no-repeat center;
+      @include mask("../../assets/facebook.svg");
     }
 
     &--github {
-      mask: url("../../assets/mail.svg") no-repeat center;
-      -webkit-mask: url("../../assets/github.svg") no-repeat center;
+      @include mask("../../assets/github.svg");
     }
   }
 }

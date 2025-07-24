@@ -58,6 +58,7 @@ const Projects = () => {
 
       <div className="projects__wrapper">
         {visibleProjects.map((project) => {
+          console.log(project);
           return <Project key={project.id} {...project} />;
         })}
       </div>

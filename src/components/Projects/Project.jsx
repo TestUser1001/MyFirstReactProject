@@ -1,16 +1,14 @@
 import React from "react";
 import "./Project.scss";
-import { NavLink } from "react-router-dom";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 import { motion } from "motion/react";
-/* import UseFetch from "../useFetch"; */
-import Preloader from "../Interface/Preloader";
 import Description from "./Description";
 
 const Project = ({ name, url, screenshot_url, build_settings }) => {
   const repo_path = build_settings?.repo_path;
   const defaultDescriptionText =
     "This project was deployed manually and is not connected to GitHub. ";
+  const projectFormattedName = name.replaceAll("-", " ");
 
   return (
     <motion.div
@@ -20,12 +18,22 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
       viewport={{ once: true }}
       className="project"
     >
-      <a href={url} className="project__url" target="_blank">
+      <a
+        href={url}
+        className="project__url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="project__card">
           <h3 className="subheading subheading--card">
-            {name.replaceAll("-", " ")}
+            {projectFormattedName}
           </h3>
-          <img src={screenshot_url} alt="" className="project__img" />
+          <img
+            loading="lazy"
+            src={screenshot_url}
+            alt={`Screenshot of the project "${projectFormattedName}"`}
+            className="project__img"
+          />
 
           {repo_path && <ProgrammingLanguages repo_path={repo_path} />}
           {repo_path ? (

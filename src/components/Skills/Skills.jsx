@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
-import "./Skills.scss";
+/* import "./Skills.scss"; */
 import "../../components/layout.scss";
 import { useTranslation } from "react-i18next";
 import Skillbar from "./Skillbar";
 import { motion } from "motion/react";
+import { LANGUAGE_LEVELS } from "../../utils/constants";
+import { FRAMEWORK_LEVELS } from "../../utils/constants";
+import { TOOLS_LEVELS } from "../../utils/constants";
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -22,32 +25,6 @@ const Skills = () => {
     toolsRef.current?.update();
   };
 
-  const languageLevels = [
-    { title: "html", level: 89 },
-    { title: "css", level: 85 },
-    { title: "javaScript", level: 20 },
-    { title: "typeScript", level: 0.2 },
-  ];
-
-  const frameworkLevels = [
-    { title: "bootstrap", level: 70 },
-    { title: "reactJs", level: 40 },
-    { title: "nextJS", level: 0.5 },
-    { title: "tailwind", level: 0 },
-    { title: "reactNative", level: 0 },
-  ];
-
-  const toolsLevels = [
-    { title: "gitHub", level: 50 },
-    { title: "vsCode", level: 90 },
-    { title: "figma", level: 30 },
-    { title: "photoshop", level: 30 },
-  ];
-
-  /* const onAnimate = () => {
-    chartRef.current?.update();
-  }; */
-
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0.9 }}
@@ -61,16 +38,19 @@ const Skills = () => {
       <h2 className="headline">{t("skillsHeading")}</h2>
       <h3 className="subheading">{t("programmingLanguages")}</h3>
       <Skillbar
-        skillLevels={languageLevels}
+        skillLevels={LANGUAGE_LEVELS}
         chartRef={langRef} /* onAnimate */
       />
       <h3 className="subheading">{t("frameworks")}</h3>
       <Skillbar
-        skillLevels={frameworkLevels}
+        skillLevels={FRAMEWORK_LEVELS}
         chartRef={frameworkRef} /* onAnimate */
       />
       <h3 className="subheading">{t("tools")}</h3>
-      <Skillbar skillLevels={toolsLevels} chartRef={toolsRef} /* onAnimate */ />
+      <Skillbar
+        skillLevels={TOOLS_LEVELS}
+        chartRef={toolsRef} /* onAnimate */
+      />
     </motion.section>
   );
 };
