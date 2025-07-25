@@ -39,6 +39,7 @@ const MenuMobile = ({ menuClosed, setMenuClosed }) => {
             : menuCloseLight
         }
         alt={menuClosed ? "Open menu" : "Close menu"}
+        loading="lazy"
       />
     </button>
   );
