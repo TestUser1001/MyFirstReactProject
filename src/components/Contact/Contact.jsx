@@ -48,7 +48,11 @@ const Contact = () => {
       <h2 className="headline">{t("contactHeading")}</h2>
       <p className="contact__cta-text">{t("contactText")}</p>
       <form ref={form} className="contact__form" onSubmit={handleSubmit}>
-        <label htmlFor="user_name" aria-label={namePlaceHolder}></label>
+        <label
+          htmlFor="user_name"
+          aria-label={namePlaceHolder}
+          className="visually-hidden"
+        ></label>
         <input
           type="text"
           name="user_name"
@@ -57,7 +61,11 @@ const Contact = () => {
           className="contact__fields"
           required
         />
-        <label htmlFor="user_email" aria-label={emailPlaceHolder}></label>
+        <label
+          htmlFor="user_email"
+          aria-label={emailPlaceHolder}
+          className="visually-hidden"
+        ></label>
         <input
           type="email"
           name="user_email"
@@ -66,7 +74,11 @@ const Contact = () => {
           className="contact__fields"
           required
         />
-        <label htmlFor="message" aria-label={messagePlaceHolder}></label>
+        <label
+          htmlFor="message"
+          aria-label={messagePlaceHolder}
+          className="visually-hidden"
+        ></label>
         <textarea
           name="message"
           id="message"

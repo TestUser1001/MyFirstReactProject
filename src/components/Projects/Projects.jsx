@@ -19,7 +19,6 @@ const Projects = () => {
   const handleOnClick = () => {
     setProjectsPerPage((prev) => {
       const newCount = Math.min(prev + 3, projects.length);
-      console.log(newCount);
       if (newCount >= projects.length) {
         setIsDisabled(true);
       }
@@ -58,7 +57,6 @@ const Projects = () => {
 
       <div className="projects__wrapper">
         {visibleProjects.map((project) => {
-          console.log(project);
           return <Project key={project.id} {...project} />;
         })}
       </div>
