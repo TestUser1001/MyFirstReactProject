@@ -3,7 +3,7 @@ import "./Project.scss";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 import { motion } from "motion/react";
 import Description from "./Description";
-import projectFallBackImg from "../../assets/ProjectFallBackImg.svg";
+import projectFallBackImg from "../../assets/ProjectFallbackImg.svg";
 
 const Project = ({ name, url, screenshot_url, build_settings }) => {
   const repo_path = build_settings?.repo_path;
