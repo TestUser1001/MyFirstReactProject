@@ -3,13 +3,14 @@ import "./Project.scss";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 import { motion } from "motion/react";
 import Description from "./Description";
+import projectFallBackImg from "../../assets/ProjectFallBackImg.png";
 
 const Project = ({ name, url, screenshot_url, build_settings }) => {
   const repo_path = build_settings?.repo_path;
   const defaultDescriptionText =
     "This project was deployed manually and is not connected to GitHub. ";
   const projectFormattedName = name.replaceAll("-", " ");
-
+  const projectImg = screenshot_url || projectFallBackImg;
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -30,7 +31,7 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
           </h3>
           <img
             loading="lazy"
-            src={screenshot_url}
+            src={projectImg}
             alt={`Screenshot of the project "${projectFormattedName}"`}
             className="project__img"
           />

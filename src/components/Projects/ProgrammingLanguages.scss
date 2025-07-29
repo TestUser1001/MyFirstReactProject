@@ -18,5 +18,10 @@
     border: 1px solid var(--chips-border);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--active-color);
+    }
   }
 }

@@ -11,9 +11,6 @@
   padding: 2rem 0;
   transition: all 0.5s ease-in-out;
 
-  /* backdrop-filter: blur(25px) saturate(20%);
-  -webkit-backdrop-filter: blur(25px) saturate(20%); */
-
   @include media-breakpoint(576px) {
     width: 80%;
   }
