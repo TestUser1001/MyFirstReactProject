@@ -1,7 +1,7 @@
 import React from "react";
 import "../layout.scss";
 import "./Hero.scss";
-import photo from "../../assets/Photo.webp";
+import photo from "../../assets/Photo.svg";
 import { useTranslation } from "react-i18next";
 import "../../components/help_classes.scss";
 import SimpleTypeWriter from "../Interface/SimpleTypeWriter";
