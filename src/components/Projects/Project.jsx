@@ -29,12 +29,16 @@ const Project = ({ name, url, screenshot_url, build_settings }) => {
           <h3 className="subheading subheading--card">
             {projectFormattedName}
           </h3>
-          <img
-            loading="lazy"
-            src={projectImg}
-            alt={`Screenshot of the project "${projectFormattedName}"`}
-            className="project__img"
-          />
+          <div className="project__card-img-container">
+            <img
+              loading="lazy"
+              src={projectImg}
+              width={348}
+              height={218}
+              alt={`Screenshot of the project "${projectFormattedName}"`}
+              className="project__img"
+            />
+          </div>
 
           {repo_path && <ProgrammingLanguages repo_path={repo_path} />}
           {repo_path ? (
