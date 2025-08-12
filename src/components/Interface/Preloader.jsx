@@ -1,5 +1,5 @@
 import React from "react";
-import PreloaderSpinner from "../../assets/spinner.svg";
+import PreloaderSpinner from "../../assets/spinner1.svg";
 import "./Preloader.scss";
 
 const Preloader = () => {
