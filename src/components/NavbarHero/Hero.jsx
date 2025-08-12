@@ -24,8 +24,9 @@ const Hero = () => {
               src={photo}
               alt="job seeker's photo"
               className="hero__avatar"
-              width={814}
-              height={814}
+              /*  width={814}
+              height={814} */
+              /*  loading="lazy" */
             />
           </div>
         </div>

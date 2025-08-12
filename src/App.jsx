@@ -14,8 +14,8 @@ import Contact from "./components/Contact/Contact";
 import Navbar from "./components/NavbarHero/Navbar";
 import Hero from "./components/NavbarHero/Hero";
 import "./components/NavbarHero/NavbarHero.scss";
-import lightBgHero from "./assets/HeroBackground.webp";
-import darkBgHero from "./assets/HeroBackgroundDarkMode.webp";
+import lightBgHero from "./assets/HeroBackground1.webp";
+import darkBgHero from "./assets/HeroBackgroundDarkMode1.webp";
 
 export const themeContext = createContext();
 export const useAppContext = () => useContext(themeContext);
