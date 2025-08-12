@@ -26,7 +26,8 @@ const Hero = () => {
               className="hero__avatar"
               width={400}
               height={400}
-              loading="lazy"
+              /*  loading="lazy" */
+              fetchPriority="high"
             />
           </div>
         </div>
