@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  lazy,
-  Suspense,
-} from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import i18n from "./utils/i18n";
 import { BrowserRouter } from "react-router-dom";
 
@@ -14,8 +7,7 @@ import "./App.scss";
 
 import { useTranslation } from "react-i18next";
 import Preloader from "./components/Interface/Preloader";
-/* import Projects from "./components/Projects/Projects"; */
-const Projects = lazy(() => import("./components/Projects/Projects"));
+import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
@@ -72,10 +64,7 @@ const App = () => {
             <Hero />
           </div>
           <About />
-          {/*     <Projects /> */}
-          <Suspense fallback={<Preloader />}>
-            <Projects />
-          </Suspense>
+          <Projects />
           <Skills />
           <Contact />
           <Footer />
