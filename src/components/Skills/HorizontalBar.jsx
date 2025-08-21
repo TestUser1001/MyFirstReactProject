@@ -27,7 +27,5 @@ export default function HorizontalBar({
   options,
   chartRef /* onAnimate */,
 }) {
-  /*   const chartRef = useRef(null); */
-  /*  console.log(options); */
   return <Bar ref={chartRef} data={data} options={options} />;
 }
